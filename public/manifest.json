@@ -1,0 +1,32 @@
+{
+  "name": "Eugene Yesaulov Info",
+  "short_name": "eyesaulov-info",
+  "icons": [
+    {
+      "src": "/img/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/icons/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/img/icons/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "minimal-ui",
+  "background_color": "#1c1e1f",
+  "theme_color": "#e65100"
+}
