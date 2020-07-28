@@ -1,9 +1,9 @@
 <template>
   <v-app dark>
+    <full-list-navigation :open-full-navigation="openFullNavigationList" @close-full-navigation="openFullNavigationList = false"></full-list-navigation>
     <loader v-if="!isReady"></loader>
     <div v-else id="window-app" class="whole-page" >
-      <v-main>
-        <full-list-navigation :open-full-navigation="openFullNavigationList" @close-full-navigation="openFullNavigationList = false"></full-list-navigation>
+      <v-main class="page-center">
         <v-row style="margin: 0; padding: 0; overflow: hidden;">
           <v-col class="navigation-menu padding-page">
             <navigation-bar @open-full-navigation="openFullNavigationList = true"></navigation-bar>
@@ -161,16 +161,28 @@ export default {
       padding: 50px 0 !important;
       min-height: 400px;
     }
+    .page-center{
+      transform: translate(0, 0);
+    }
   }
 
   /* Extra large devices (large laptops and desktops, 1200px and up) */
   @media only screen and (min-width: 1200px) and (min-height: 500px){
     .whole-page{
       margin: 50px 100px;
+      width: 100%;
+      height: 100%;
     }
     .padding-page{
       padding: 50px 0 !important;
       min-height: 400px;
+    }
+    .page-center{
+      width: 1000px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 

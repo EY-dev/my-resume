@@ -10,27 +10,44 @@
                 <v-icon>list</v-icon>
             </v-btn>
         </v-list-item>
-        <v-list dense v-if="isReady">
+        <v-list dense v-if="isReady" class="navigation-links">
             <v-list-item
                     v-for="item in links"
                     :key="item.key"
-                    style="margin-bottom: 5px"
-            >
+                    style="margin-bottom: 15px">
                 <v-list-item-icon>
-                            <v-btn
-                                    class="ma-2"
-                                    style="margin-left: -10px!important;"
-                                    :x-large="item.isActive"
-                                    outlined
-                                    fab
-                                    color="#1c1e1f"
-                                    @click="open(item.to)"
-                                    @mouseover="setHoverActive(item.to, true)"
-                                    @mouseleave="setHoverActive(item.to, false)">
+                    <v-tooltip right style="z-index: 101" v-if="!$store.getters.isMobile">
+                        <template v-slot:activator="{ on, attrs }">
+                            <v-btn v-bind="attrs"
+                                   v-on="on"
+                                   class="ma-2"
+                                   style="margin-left: -10px!important;"
+                                   :x-large="item.isActive"
+                                   outlined
+                                   fab
+                                   color="#1c1e1f"
+                                   @click="open(item.to)"
+                                   @mouseover="setHoverActive(item.to, true)"
+                                   @mouseleave="setHoverActive(item.to, false)">
                                 <v-icon v-if="item.isHoverActive||item.isActive" style="color: #e65100">{{item.icon}}</v-icon>
                                 <v-icon v-else style="color: #dedede">{{item.icon}}</v-icon>
                             </v-btn>
-                        <span style="z-index: 102">Programmatic tooltip</span>
+                        </template>
+                        <span>{{item.title}}</span>
+                    </v-tooltip>
+                    <v-btn v-else
+                           class="ma-2"
+                           style="margin-left: -10px!important;"
+                           :x-large="item.isActive"
+                           outlined
+                           fab
+                           color="#1c1e1f"
+                           @click="open(item.to)"
+                           @mouseover="setHoverActive(item.to, true)"
+                           @mouseleave="setHoverActive(item.to, false)">
+                        <v-icon v-if="item.isHoverActive||item.isActive" style="color: #e65100">{{item.icon}}</v-icon>
+                        <v-icon v-else style="color: #dedede">{{item.icon}}</v-icon>
+                    </v-btn>
                 </v-list-item-icon>
             </v-list-item>
         </v-list>
@@ -52,7 +69,7 @@
         },
         computed:{
             links(){
-                return this.$store.getters.getAvailableLinks;
+                return this.$store.getters.getShortAvailableLinks;
             },
         },
         methods:{
@@ -79,6 +96,11 @@
 </script>
 
 <style scoped>
+    .navigation-links{
+        position: absolute;
+        top: 50%;
+        transform: translate(-5px, -50%);
+    }
     .navigation-body{
         height: 100%;
         background-color: #1c1e1f;

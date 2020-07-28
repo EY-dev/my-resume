@@ -3,10 +3,10 @@
     <div class="box"/>
     <div class="shadow"/>
     <perfect-scrollbar :options="{suppressScrollX:true}" class="content-body">
-      <about-me></about-me>
+      <about-me/>
     </perfect-scrollbar>
     <div class="shadow-reverse"/>
-    <div class="box" style="margin-top: -20px;"/>
+    <div class="box box-bottom"/>
     <div/>
   </v-container>
 </template>
@@ -56,7 +56,7 @@
     height: inherit;
   }
   .shadow {
-    margin-top: 20px;
+    margin-top: 18px;
     position: absolute;
     width: 100%;
     height: 40px;
@@ -65,7 +65,7 @@
     z-index: 5;
   }
   .shadow-reverse {
-    margin-top: -60px;
+    margin-top: -58px;
     position: absolute;
     width: 100%;
     height: 40px;
@@ -74,12 +74,16 @@
     z-index: 5;
   }
   .box {
+    margin-top: -1px;
     position: absolute;
     width: 100%;
     height: 20px;
     display: block;
     background:  rgb(28, 30, 31);
     z-index: 5;
+  }
+  .box-bottom{
+    margin-top: -19px!important;
   }
   @media only screen and (min-width: 600px), (max-height: 400px) {
     .content-body{
