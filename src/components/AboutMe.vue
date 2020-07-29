@@ -329,9 +329,7 @@
         </v-row>
         <v-row>
             <v-col>
-                <div class="description">
-                    <p></p>
-                </div>
+                <div style="height:20px;"><p> </p></div>
             </v-col>
         </v-row>
     </div>

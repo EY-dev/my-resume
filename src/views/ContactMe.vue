@@ -3,7 +3,7 @@
         <div class="box"/>
         <div class="shadow"/>
         <perfect-scrollbar :options="{suppressScrollX:true}" class="content-body">
-            <my-contacts/>
+            <contacts-information/>
         </perfect-scrollbar>
         <div class="shadow-reverse"/>
         <div class="box box-bottom"/>
@@ -13,10 +13,12 @@
 
 <script>
 
-    import MyContacts from "../components/MyContacts";
+
+
+    import ContactsInformation from "../components/ContactsInformation";
     export default {
-        name: 'Contacts',
-        components: {MyContacts},
+        name: 'ContactMe',
+        components: {ContactsInformation},
         data: () => ({
         }),
         methods:{

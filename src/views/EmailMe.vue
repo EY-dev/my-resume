@@ -3,7 +3,7 @@
         <div class="box"/>
         <div class="shadow"/>
         <perfect-scrollbar :options="{suppressScrollX:true}" class="content-body">
-            <my-contacts/>
+            <email-form/>
         </perfect-scrollbar>
         <div class="shadow-reverse"/>
         <div class="box box-bottom"/>
@@ -13,10 +13,11 @@
 
 <script>
 
-    import MyContacts from "../components/MyContacts";
+
+    import EmailForm from "../components/EmailForm";
     export default {
-        name: 'Contacts',
-        components: {MyContacts},
+        name: 'EmailMe',
+        components: {EmailForm},
         data: () => ({
         }),
         methods:{

@@ -52,7 +52,7 @@
 
 <style scoped>
 
-    .my-skills{
+    .experience{
         margin-left: 20px;
         margin-right: 20px;
     }
