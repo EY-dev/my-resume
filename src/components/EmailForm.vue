@@ -45,6 +45,7 @@
                 </v-btn>
             </v-form>
         </ValidationObserver>
+        <div style="height:20px;"><p> </p></div>
         <form v-show='false' id="email-form" @submit.prevent="sendEmail">
             <input type="text" name="user_fName"  :value="form.fName">
             <input type="text" name="user_lName"  :value="form.lName">

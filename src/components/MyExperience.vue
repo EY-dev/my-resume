@@ -40,7 +40,7 @@
             </div>
             <div class="description">Full Time. Instructor for Math, Physics, Computer Science classes.</div>
         </div>
-        <div><p/></div>
+        <div style="height:20px;"><p> </p></div>
     </div>
 </template>
 
@@ -52,10 +52,6 @@
 
 <style scoped>
 
-    .experience{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
     .entry-subheader{
         margin-top: 40px;
         display: flex;

@@ -40,7 +40,7 @@
             </div>
             <div class="description">Faculty of mathematics, mechanic and Computer science, Bachelors Degree</div>
         </div>
-        <div><p/></div>
+        <div style="height:20px;"><p> </p></div>
     </div>
 </template>
 

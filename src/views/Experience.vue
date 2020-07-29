@@ -3,7 +3,7 @@
         <div class="box"/>
         <div class="shadow"/>
         <perfect-scrollbar :options="{suppressScrollX:true}" class="content-body">
-            <my-experience/>
+            <my-experience style="margin-left: 20px; margin-right: 20px;"/>
         </perfect-scrollbar>
         <div class="shadow-reverse"/>
         <div class="box box-bottom"/>
