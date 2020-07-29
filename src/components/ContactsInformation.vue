@@ -121,8 +121,8 @@
 
 <style scoped>
     a {
-        color: #ffffff;
         text-decoration: none;
+        color: #ffffff;
         text-align: center;
     }
     h5{

@@ -9,40 +9,47 @@
         style="background-color: #e65100; height: 100%; z-index: 101"
         temporary>
         <v-list dense>
-            <div id="pages-1" class="widget widget_pages">
-                <h4 class="widget-title">Main Pages</h4>
-                <v-list-item
-                        v-for="item in mainLinks"
-                        :key="item.key"
-                        :to="item.to"
-                        @click="closeNavigation(item)"
-                        link>
-                    <v-list-item-icon>
-                        <v-icon>{{item.icon}}</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-content>
-                        <v-list-item-title>{{item.title}}</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
+            <div class="links">
+                <div id="pages-1" class="widget widget_pages">
+                    <h4 class="widget-title">Main Pages</h4>
+                    <v-list-item
+                            v-for="item in mainLinks"
+                            :key="item.key"
+                            :to="item.to"
+                            @click="closeNavigation(item)"
+                            link>
+                        <v-list-item-icon>
+                            <v-icon>{{item.icon}}</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>{{item.title}}</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </div>
+                <v-divider style="margin-top: 15px"/>
+                <div id="pages-2" class="widget">
+                    <h4 class="widget-title">Additional Pages</h4>
+                    <v-list-item
+                            v-for="item in additionalLinks"
+                            :key="item.key"
+                            :to="item.to"
+                            @click="closeNavigation(item)"
+                            link>
+                        <v-list-item-icon>
+                            <v-icon>{{item.icon}}</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>{{item.title}}</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </div>
+                <v-divider style="margin-top: 15px"/>
             </div>
-            <v-divider style="margin-top: 15px"/>
-            <div id="pages-2" class="widget">
-                <h4 class="widget-title">Additional Pages</h4>
-                <v-list-item
-                        v-for="item in additionalLinks"
-                        :key="item.key"
-                        :to="item.to"
-                        @click="closeNavigation(item)"
-                        link>
-                    <v-list-item-icon>
-                        <v-icon>{{item.icon}}</v-icon>
-                    </v-list-item-icon>
-                    <v-list-item-content>
-                        <v-list-item-title>{{item.title}}</v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
+            <div class="update-btn" v-if="isNewVersion">
+                <v-btn class="update-app" outlined color="white" @click="updateApp()">
+                    <v-icon left>priority_high</v-icon>get update
+                </v-btn>
             </div>
-            <v-divider style="margin-top: 15px"/>
         </v-list>
     </v-navigation-drawer>
 </template>
@@ -62,6 +69,10 @@
                 }
                 this.$emit('close-full-navigation')
             },
+            updateApp(){
+                window.location.reload(true);
+                this.$store.dispatch('setNewVersionReady', false);
+            }
         },
         created() {
         },
@@ -71,6 +82,9 @@
             },
             additionalLinks(){
                 return this.$store.getters.getAdditionalAvailableLinks;
+            },
+            isNewVersion(){
+                return this.$store.getters.isNewVersion;
             }
         },
     }
@@ -91,5 +105,19 @@
         margin-bottom: 30px;
         position: relative;
         margin-top: 30px;
+    }
+    .links{
+        height: 90%;
+    }
+    .update-btn{
+        width: 100%;
+        height: 36px;
+        position: absolute;
+        bottom: 10px;
+    }
+    .update-app{
+        height: 10%;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 </style>

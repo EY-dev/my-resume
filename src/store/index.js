@@ -15,7 +15,8 @@ export default new Vuex.Store({
       {id: 6, key: 'email-me',  title: 'Email Me',     icon:'mail',            to:'/email-me',  isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
       {id: 7, key: 'contact-me',title: 'Contact Me',   icon:'phone',           to:'/contact-me',isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
     ],
-    isMobile: (/Mobi|Android/i.test(navigator.userAgent))
+    isMobile: (/Mobi|Android/i.test(navigator.userAgent)),
+    newVersionReady: true
   },
   mutations: {
     SET_LINK_IS_ACTIVE: (state, value) => {
@@ -24,6 +25,9 @@ export default new Vuex.Store({
     SET_HOVER_IS_ACTIVE: (state, value) => {
       state.links.find(link => link.to === value.address).isHoverActive = value.value;
     },
+    SET_NEW_VERSION_READY: (state, value) => {
+      state.newVersionReady = value;
+    }
   },
   actions: {
     setLinkIsActive: (state, value) => {
@@ -31,6 +35,9 @@ export default new Vuex.Store({
     },
     setHoverIsActive: (state, value) => {
       state.commit('SET_HOVER_IS_ACTIVE', value);
+    },
+    setNewVersionReady: (state, value) => {
+      state.commit('SET_NEW_VERSION_READY', value);
     },
   },
   modules: {
@@ -50,6 +57,9 @@ export default new Vuex.Store({
     },
     isMobile: state => {
       return state.isMobile;
+    },
+    isNewVersion: state => {
+      return state.newVersionReady;
     }
   },
   computed: {

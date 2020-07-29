@@ -21,6 +21,9 @@ if (process.env.NODE_ENV === 'production') {
     },
     updated () {
       console.log('Please, refresh the page');
+      this.$store.dispatch('setNewVersionReady', true);
+      console.log(this.$store.getters.isNewVersion)
+
     },
     offline () {
       console.log('No internet connection found. App is running in offline mode.')
