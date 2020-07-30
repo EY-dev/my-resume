@@ -14,9 +14,12 @@ export default new Vuex.Store({
       {id: 5, key: 'experience',title: 'My Experience',icon:'business_center', to:'/experience',isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
       {id: 6, key: 'email-me',  title: 'Email Me',     icon:'mail',            to:'/email-me',  isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
       {id: 7, key: 'contact-me',title: 'Contact Me',   icon:'phone',           to:'/contact-me',isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
+      {id: 8, key: 'elegant-crm',        title: 'Elegant project', icon:'looks_one', to:'/elegant-crm',        isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
+      {id: 9, key: 'demo-of-algorithms', title: 'Pet project',     icon:'looks_two', to:'/demo-of-algorithms', isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
+      {id: 10,key: 'resume',             title: 'Resume project',  icon:'looks_3',   to:'/resume',             isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
     ],
     isMobile: (/Mobi|Android/i.test(navigator.userAgent)),
-    newVersionReady: true
+    newVersionReady: false
   },
   mutations: {
     SET_LINK_IS_ACTIVE: (state, value) => {
@@ -27,6 +30,7 @@ export default new Vuex.Store({
     },
     SET_NEW_VERSION_READY: (state, value) => {
       state.newVersionReady = value;
+      localStorage.setItem("newVersionIsReady", value);
     }
   },
   actions: {
@@ -59,7 +63,9 @@ export default new Vuex.Store({
       return state.isMobile;
     },
     isNewVersion: state => {
-      return state.newVersionReady;
+      let isReady  = localStorage.getItem("newVersionIsReady");
+      isReady = (isReady === 'true')
+      return state.newVersionReady = isReady;
     }
   },
   computed: {

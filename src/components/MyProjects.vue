@@ -10,27 +10,31 @@
         </v-row>
         <v-row>
             <v-col>
-
+                <elegant-c-r-m/>
             </v-col>
         </v-row>
         <v-divider style="margin-top: 15px"/>
         <v-row>
             <v-col>
-
+                <pet-project/>
             </v-col>
         </v-row>
         <v-divider style="margin-top: 15px"/>
         <v-row>
             <v-col>
-
+                <resume-project/>
             </v-col>
         </v-row>
     </div>
 </template>
 
 <script>
+    import ElegantCRM from "./ElegantCRM";
+    import PetProject from "./PetProject";
+    import ResumeProject from "./ResumeProject";
     export default {
-        name: "MyProjects"
+        name: "MyProjects",
+        components: {ResumeProject, PetProject, ElegantCRM}
     }
 </script>
 

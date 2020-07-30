@@ -120,6 +120,9 @@
 </script>
 
 <style scoped>
+    .v-application a {
+        color: #ffffff;
+    }
     a {
         text-decoration: none;
         color: #ffffff;

@@ -11,7 +11,8 @@ if (process.env.NODE_ENV === 'production') {
       )
     },
     registered () {
-      console.log('Service worker has been registered.')
+      console.log('Service worker has been registered.');
+      localStorage.setItem("newVersionIsReady", 'false');
     },
     cached () {
       console.log('Content has been cached for offline use.')
@@ -21,9 +22,7 @@ if (process.env.NODE_ENV === 'production') {
     },
     updated () {
       console.log('Please, refresh the page');
-      this.$store.dispatch('setNewVersionReady', true);
-      console.log(this.$store.getters.isNewVersion)
-
+      localStorage.setItem("newVersionIsReady", 'true');
     },
     offline () {
       console.log('No internet connection found. App is running in offline mode.')

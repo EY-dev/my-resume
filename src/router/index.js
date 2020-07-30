@@ -9,6 +9,10 @@ const Education = () => import(/* webpackChunkName: "common" */ "@/views/Educati
 const Experience = () => import(/* webpackChunkName: "common" */ "@/views/Experience.vue");
 const EmailMe = () => import(/* webpackChunkName: "common" */ "@/views/EmailMe.vue");
 const ContactMe = () => import(/* webpackChunkName: "common" */ "@/views/ContactMe.vue");
+const ElegantCRM = () => import(/* webpackChunkName: "common" */ "@/views/ProjectElegantPage.vue");
+const PetProject = () => import(/* webpackChunkName: "common" */ "@/views/ProjectAlgorithmsPage.vue");
+const ResumeProject = () => import(/* webpackChunkName: "common" */ "@/views/ProjectResumePage.vue");
+
 
 Vue.use(VueRouter)
 
@@ -52,6 +56,21 @@ Vue.use(VueRouter)
         path: '/contact-me',
         name: 'Contact Me',
         component: ContactMe
+    },
+    {
+        path: '/elegant-crm',
+        name: 'Elegant project',
+        component: ElegantCRM
+    },
+    {
+        path: '/demo-of-algorithms',
+        name: 'Pet project',
+        component: PetProject
+    },
+    {
+        path: '/resume',
+        name: 'Resume project',
+        component: ResumeProject
     }
 ]
 
