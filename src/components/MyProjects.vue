@@ -2,14 +2,6 @@
     <div class="my-projects">
         <v-row>
             <v-col>
-                <header class="entry-subheader">
-                    <v-icon class="icon-style">work_outline</v-icon>
-                    <h2 class="entry-subtitle">my projects</h2>
-                </header>
-            </v-col>
-        </v-row>
-        <v-row>
-            <v-col>
                 <elegant-c-r-m/>
             </v-col>
         </v-row>
@@ -23,6 +15,11 @@
         <v-row>
             <v-col>
                 <resume-project/>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
+                <div style="height:20px;"><p> </p></div>
             </v-col>
         </v-row>
     </div>
@@ -42,20 +39,5 @@
     .my-projects{
         margin-left: 20px;
         margin-right: 20px;
-    }
-    .entry-subheader{
-        margin-top: 40px;
-        display: flex;
-    }
-    .entry-subtitle{
-        font-weight: 900;
-        color: #ffffff;
-        text-transform: lowercase;
-        margin-bottom: 0;
-        margin-left: 15px;
-    }
-    .icon-style{
-        font-size: 2.2rem;
-        color: #e65100;
     }
 </style>
