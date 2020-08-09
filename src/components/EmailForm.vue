@@ -4,47 +4,59 @@
             <v-icon class="icon-style">mail</v-icon>
             <h2 class="entry-subtitle">sent message</h2>
         </header>
-        <ValidationObserver ref="observer" v-slot="{ }">
-            <v-form @submit.prevent="sendIt">
-                <ValidationProvider v-slot="{ errors }" name="FirstName" rules="required|max:10">
-                    <v-text-field dark
-                            v-model="form.fName"
-                            :counter="10"
-                            :error-messages="errors"
-                            label="First name"
-                            required
-                    ></v-text-field>
-                </ValidationProvider>
-                <ValidationProvider v-slot="{ errors }" name="LastName" rules="required|max:10">
-                    <v-text-field dark
-                            v-model="form.lName"
-                            :counter="10"
-                            :error-messages="errors"
-                            label="Last name"
-                            required
-                    ></v-text-field>
-                </ValidationProvider>
-                <ValidationProvider v-slot="{ errors }" name="email" rules="required|email">
-                    <v-text-field dark
-                            v-model="form.email"
-                            :error-messages="errors"
-                            label="E-mail"
-                            required
-                    ></v-text-field>
-                </ValidationProvider>
-                <ValidationProvider v-slot="{ errors }" name="message" rules="required">
-                    <v-textarea dark
-                                v-model="form.message"
-                                :error-messages="errors"
-                                label="Message"
-                                required
-                    ></v-textarea>
-                </ValidationProvider>
-                <v-btn class="ma-2" tile outlined color="#e65100" @click="sendIt">
-                    <v-icon left>forward</v-icon> Send
-                </v-btn>
+        <v-form @submit.prevent="sendIt" ref="emailForm">
+            <v-text-field dark
+                          v-model="form.fName"
+                          :counter="10"
+                          :rules="nameRules"
+                          label="First name"
+                          required
+            ></v-text-field>
+            <v-text-field dark
+                    v-model="form.lName"
+                    :counter="10"
+                          :rules="nameRules"
+                    label="Last name"
+                    required
+            ></v-text-field>
+            <v-text-field dark
+                    v-model="form.email"
+                          :rules="emailRules"
+                    label="E-mail"
+                    required
+            ></v-text-field>
+            <v-textarea dark
+                        :rules="messageRules"
+                        v-model="form.message"
+                        label="Message"
+                        required
+            ></v-textarea>
+        <v-btn class="ma-2" tile outlined color="#e65100" @click="sendIt">
+            <v-icon left>forward</v-icon> Send
+        </v-btn>
             </v-form>
-        </ValidationObserver>
+        <v-dialog v-model="dialog" width="50vh">
+          <v-card>
+            <v-card-text>
+              <div class="text-center" style="padding-top: 25px">
+                <p>
+                  Your Message was sent
+                </p>
+              </div>
+            </v-card-text>
+            <v-divider></v-divider>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                  color="primary"
+                  text
+                  @click="dialog = false"
+              >
+                OK
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
         <div style="height:20px;"><p> </p></div>
         <form v-show='false' id="email-form" @submit.prevent="sendEmail">
             <input type="text" name="user_fName"  :value="form.fName">
@@ -57,31 +69,12 @@
 </template>
 
 <script>
-    import { required, email, max } from 'vee-validate/dist/rules'
-    import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
     import emailjs from "emailjs-com";
 
-    setInteractionMode('eager')
-
-    extend('required', {
-        ...required,
-        message: '{_field_} can not be empty',
-    })
-
-    extend('max', {
-        ...max,
-        message: '{_field_} may not be greater than {length} characters',
-    })
-
-    extend('email', {
-        ...email,
-        message: 'Email must be valid',
-    })
     export default {
         name: "EmailForm",
         components: {
-            ValidationProvider,
-            ValidationObserver,
+
         },
         data: () => ({
             form: {
@@ -90,6 +83,18 @@
                 email: '',
                 message: ''
             },
+          dialog : false,
+          nameRules: [
+            v => !!v || 'Name is required',
+            v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+          ],
+          emailRules: [
+            v => !!v || 'E-mail is required',
+            v => /.+@.+\..+/.test(v) || 'E-mail must be valid',
+          ],
+          messageRules: [
+            v => !!v || 'message is required'
+          ]
         }),
 
         methods: {
@@ -97,14 +102,32 @@
                 const el = document.getElementById('sending');
                 el.click();
             },
-            sendEmail: (e) => {
+            sendEmail(e) {
+              if(this.$refs.emailForm.validate()){
                 emailjs.sendForm('gmail', 'webresumeform', e.target, 'user_ZLOIg359OFBPpKHA5oBQw')
                     .then((result) => {
-                        console.log('SUCCESS!', result.status, result.text);
-                    }, (error) => {
-                        console.log('FAILED...', error);
+                      console.log('SUCCESS!', result.status, result.text);
+                      this.clearForm();
+                      this.resetValidation();
+                      this.dialog = true;
+                    })
+                    .catch((error) => {
+                      console.log('FAILED...', error);
                     });
-            }
+              }
+            },
+            clearForm(){
+              this.$refs.emailForm.reset()
+              this.form = {
+                fName: '',
+                lName: '',
+                email: '',
+                message: ''
+              }
+            },
+            resetValidation () {
+              this.$refs.emailForm.resetValidation()
+            },
         },
     }
 </script>

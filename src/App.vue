@@ -8,7 +8,17 @@
           <v-col class="navigation-menu padding-page">
             <navigation-bar @open-full-navigation="openFullNavigationList = true"></navigation-bar>
           </v-col>
-          <v-col v-if="showPhoto()" class="mainInfo" :style="{'height': heightWindow+'px'}"></v-col>
+          <v-col v-if="showPhoto()" class="mainInfo" :style="{'height': heightWindow+'px'}">
+            <div class="photo-background" style="background-image: url('/img/photo-temp.png')">
+              <img src="../public/img/photo-temp.png" alt="photo" style="display: none"/>
+            </div>
+            <div style="display: none">
+              <blockquote class="blockquote">
+                “Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.”
+                — Albert Einstein
+              </blockquote>
+            </div>
+          </v-col>
           <v-col class="padding-page" :style="{'height': heightWindow+'px'}">
             <div class="content">
               <transition name="router-anim" appear enter-active-class="animated slideInLeft delay-1s" leave-active-class="animated slideOutLeft">
@@ -108,7 +118,7 @@ export default {
     padding: 0;
     background-color: #1c1e1f;
     width: 20vh;
-    max-width: 300px!important;
+    max-width: 470px!important;
     min-width: 250px!important;
     min-height: 400px!important;
     box-shadow: 0 0 50px 0 black;
@@ -178,12 +188,19 @@ export default {
       min-height: 400px;
     }
     .page-center{
-      width: 1000px;
+      width: 1100px;
       position: absolute;
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+  .photo-background{
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
   }
 
 </style>
