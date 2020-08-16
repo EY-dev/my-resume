@@ -8,7 +8,7 @@
         <v-col>
           <div class="description">
             <p style="text-indent: 25px; " align="justify">
-              If you have any questions regarding new offers, you have ambitious and interesting idea for web application or your dealings with me, please do not hesitate to contact at the above-mentioned address, e-mail address or phone number.
+              If you have any questions regarding new offers, you have ambitious and interesting idea for web application or your dealings with me, please do not hesitate to contact at the below-mentioned address, e-mail address or phone number.
             </p>
           </div>
         </v-col>
