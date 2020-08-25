@@ -13,121 +13,30 @@
                 </div>
             </v-col>
         </v-row>
-        <v-row id="fetchers">
-            <v-col>
-                <p style="text-indent: 25px; " align="justify">
-                    Interesting fetchers:
-                </p>
-                <div class="description">
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            Random generation of an array with a choice of the number of elements limited by a device's screen size
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            SVG animation of next sorting algorithms: <i>Bubble sort, Selection sort, Quick sort, Insertion sort, Gnome sort, Cocktail sort, Comb sort</i>
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            Speed settings of animation
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            Black and White mode
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            PHP + MS Access backend for authorization
-                        </span>
-                    </div>
-                </div>
-            </v-col>
-        </v-row>
-        <v-row id="link">
-            <v-col>
-                <div style="font-size: 13px">
-                    <span style="margin-right: 15px; margin-left: 25px">Source: </span>
-                    <a href="https://github.com/Euegene/vue-algorithms">GitHub link</a>
-                </div>
-            </v-col>
-        </v-row>
-        <v-row id="technology">
-            <v-col class="chips">
-                <div>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        Vue
-                    </v-chip>
-                    <v-chip
-
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        Vuetify
-                    </v-chip>
-                    <v-chip
-
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        JavaScript
-                    </v-chip>
-                    <v-chip
-
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        html5
-                    </v-chip>
-                    <v-chip
-
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        css3
-                    </v-chip>
-                    <v-chip
-
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        VueRouter
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        php
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small
-                    >
-                        MS Access
-                    </v-chip>
-                </div>
-            </v-col>
-        </v-row>
+        <fetchers-list :list="fetchers" />
+        <links-list :list="links"/>
+        <technology-chips :list="technology"/>
+        <screens :images="images" :prefix="'algorithms'"/>
     </div>
 </template>
 
 <script>
+import Screens from "@/components/Screens";
+import TechnologyChips from "@/components/TechnologyChips";
+import FetchersList from "@/components/FetchersList";
+import LinksList from "@/components/LinksList";
     export default {
-        name: "PetProject"
+        name: "PetProject",
+        components: {LinksList, FetchersList, TechnologyChips, Screens},
+        data: () => ({
+            images: ['home.jpg', 'sorts.jpg', 'home-mobile.jpg', 'sorts-mobile.jpg'],
+            technology: ['Vue', 'Vuetify', 'JavaScript', 'html5', 'css3', 'VueRouter', 'php', 'MS Access'],
+            fetchers: ['Random generation of an array with a choice of the number of elements limited by a device\'s screen size', 'SVG animation of next sorting algorithms: <i>Bubble sort, Selection sort, Quick sort, Insertion sort, Gnome sort, Cocktail sort, Comb sort</i>', ' Dark and Light mode', 'PHP + MS Access backend for authorization'],
+            links: [
+                {value: 'GitHub,', src: 'https://github.com/Euegene/vue-algorithms'},
+                {value: 'WebSite', src: 'https://ey-dev.github.io/sort-algorithms/'
+                }]
+        })
     }
 </script>
 

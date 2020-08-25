@@ -13,125 +13,31 @@
                 </div>
             </v-col>
         </v-row>
-        <v-row id="fetchers">
-            <v-col>
-                <p style="text-indent: 25px; " align="justify">
-                    Interesting fetchers:
-                </p>
-                <div class="description">
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            PHP + MySQL server side REST API
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                          Authorization and authentication use cookies, php sessions and tokens
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            Different roles for users
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            Smart data sheets
-                        </span>
-                    </div>
-                    <div class="description-item">
-                        <span style="text-indent: 25px;">
-                            Uploading and downloading files
-                        </span>
-                    </div>
-                  <div class="description-item">
-                        <span style="text-indent: 25px;">
-                           Exporting to MS Excel
-                        </span>
-                  </div>
-                  <div class="description-item">
-                        <span style="text-indent: 25px;">
-                           Tickets journal with comments from users
-                        </span>
-                  </div>
-                </div>
-            </v-col>
-        </v-row>
-        <v-row id="link">
-            <v-col>
-                <div style="font-size: 13px">
-                    <span style="margin-right: 15px; margin-left: 25px">Private project:</span>
-                    <a style="margin-right: 15px; " href="https://github.com/Euegene/elegantCRM-Client">Client side</a>
-                    <a href="https://github.com/Euegene/elegantCRM-Server">Server side</a>
-                </div>
-            </v-col>
-        </v-row>
-        <v-row id="technology">
-            <v-col class="chips">
-                <div>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        Vue
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        Bootstrap
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        JavaScript
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        html5
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        css3
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        VueRouter
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        php
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        MySQL
-                    </v-chip>
-                    <v-chip
-                            color="#e65100"
-                            outlined
-                            x-small>
-                        MS VB Application
-                    </v-chip>
-                </div>
-            </v-col>
-        </v-row>
+        <fetchers-list :list="fetchers" />
+        <links-list :list="links"/>
+        <technology-chips :list="technology"/>
+        <screens :images="images" :prefix="'elegant'"/>
     </div>
 </template>
 
 <script>
+import Screens from "@/components/Screens";
+import TechnologyChips from "@/components/TechnologyChips";
+import FetchersList from "@/components/FetchersList";
+import LinksList from "@/components/LinksList";
     export default {
-        name: "ElegantCRM"
+        name: "ElegantCRM",
+        components: {LinksList, FetchersList, TechnologyChips, Screens},
+        data: () => ({
+            images: ['login.jpg', 'dash.jpg', 'projects.jpg', 'login-mobile.jpg', 'dash-mobile.jpg', 'clocks-mobile.jpg', 'projects-mobile.jpg'],
+            technology: ['Vue', 'Bootstrap', 'JavaScript', 'html5', 'css3', 'VueRouter', 'php', 'mySQL', 'MS VB Application'],
+            fetchers: ['PHP + MySQL server side REST API', 'Authorization and authentication use cookies, php sessions and tokens', 'Different roles for users', 'Smart data sheets', 'Uploading and downloading files', 'Exporting to MS Excel', 'Tickets journal with comments from users'],
+            links: [
+                {value: 'GitHub client side,', src: 'https://github.com/Euegene/elegantCRM-Client'},
+                {value: 'GitHub server side,', src: 'https://github.com/Euegene/elegantCRM-Server'},
+                {value: 'WebSite', src: 'https://crm.elegantenterprisesinc.com/#/login'
+                }]
+        })
     }
 </script>
 
