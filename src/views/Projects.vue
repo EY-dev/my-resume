@@ -27,7 +27,7 @@
             },
         },
         mounted() {
-            setTimeout(()=>{this.onResize();},1100)
+            setTimeout(()=>{this.onResize();},1200)
         },
         created() {
             this.$nextTick(() => {
