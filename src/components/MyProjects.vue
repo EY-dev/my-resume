@@ -19,6 +19,11 @@
         </v-row>
         <v-row>
             <v-col>
+                <noelia-dickson/>
+            </v-col>
+        </v-row>
+        <v-row>
+            <v-col>
                 <div style="height:20px;"><p> </p></div>
             </v-col>
         </v-row>
@@ -29,9 +34,10 @@
     import ElegantCRM from "./ElegantCRM";
     import PetProject from "./PetProject";
     import ResumeProject from "./ResumeProject";
+    import NoeliaDickson from "@/components/NoeliaDickson";
     export default {
         name: "MyProjects",
-        components: {ResumeProject, PetProject, ElegantCRM}
+        components: {NoeliaDickson, ResumeProject, PetProject, ElegantCRM}
     }
 </script>
 

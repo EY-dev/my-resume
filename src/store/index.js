@@ -17,6 +17,7 @@ export default new Vuex.Store({
       {id: 8, key: 'elegant-crm',        title: 'Elegant project', icon:'looks_one',       to:'/elegant-crm',        isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
       {id: 9, key: 'demo-of-algorithms', title: 'Pet project',     icon:'looks_two',       to:'/demo-of-algorithms', isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
       {id: 10,key: 'resume',             title: 'Resume project',  icon:'looks_3',         to:'/resume',             isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
+      {id: 10,key: 'art',                title: 'Art portfolio',   icon:'looks_3',         to:'/art-portfolio',      isShow: true, isActive: false, isHoverActive:false, isShortNavigation: false},
     ],
     isMobile: (/Mobi|Android/i.test(navigator.userAgent)),
     newVersionReady: false
