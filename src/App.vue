@@ -9,14 +9,31 @@
             <navigation-bar @open-full-navigation="openFullNavigationList = true"></navigation-bar>
           </v-col>
           <v-col v-if="showPhoto()" class="mainInfo" :style="{'height': heightWindow+'px'}">
-            <div class="photo-background" style="background-image: url('/img/photo-temp.png')">
-              <img src="../public/img/photo-temp.png" alt="photo" style="display: none"/>
+            <div class="photo-background" style=")">
             </div>
-            <div style="display: none">
-              <blockquote class="blockquote">
-                “Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution.”
-                — Albert Einstein
-              </blockquote>
+            <div class="picture-title">
+                <h1>Eugene Yesaulov</h1>
+                <ul>
+                    <li><a href="tel:(720) 292-7117"><v-icon class="icon-row">ring_volume</v-icon></a></li>
+                    <li><a href="mailto:eugene.yeasulov@gmail.com"><v-icon class="icon-row">email</v-icon></a></li>
+                    <li><a href="https://www.facebook.com/EugeneYesaulov"><svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 33.866667 33.866667"
+                        height="30"
+                        width="30">
+                        <g transform="translate(223.30833,-34.471382)" id="layer1">
+                            <g
+                                style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:23.4798px;line-height:1.25;font-family:'Agency FB';-inkscape-font-specification:'Agency FB Bold';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.326107"
+                                id="text858"
+                                transform="scale(1.2325311,0.81133853)"
+                                aria-label="f">
+                                <path
+                                    id="path863"
+                                    d="m -164.43468,56.532151 h -2.01687 l -0.0201,3.721558 h 1.75275 l 0.0201,2.780674 h -1.75274 v 9.617641 h -2.72515 v -9.617641 h -1.24853 l -0.0201,-2.780674 h 1.24853 c 0,0 -3e-5,-1.477922 -3e-5,-3.15625 0,-0.983398 0.84941,-3.033545 1.86584,-3.033545 h 2.89625 z" />
+                            </g>
+                        </g>
+                    </svg></a></li>
+                </ul>
             </div>
           </v-col>
           <v-col class="padding-page" :style="{'height': heightWindow+'px'}">
@@ -125,6 +142,31 @@ export default {
     margin: 0;
     z-index: 100;
   }
+  .picture-title{
+      transform: translate(0, -100%);
+      text-align: center;
+      height: 100px;
+      font-size: 1.2rem;
+  }
+  .picture-title ul{
+      width: 50%;
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: auto;
+  }
+  .picture-title ul li{
+      flex: 1;
+  }
+  .picture-title ul li a{
+      text-decoration: none;
+  }
+  .picture-title ul li a i{
+      color: #fff;
+  }
+  .picture-title ul li a:hover i, .picture-title ul li a:hover svg{
+      transform: scale(1.5, 1.5);
+  }
   .content{
     height: 100%;
   }
@@ -201,6 +243,7 @@ export default {
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
+      background-image: url('assets/photo-temp.jpg')
   }
 
 </style>
