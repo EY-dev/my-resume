@@ -34,7 +34,7 @@ export default {
         fetchers: ['Two languages site: English, Spanish', 'Custom transition of navigation', 'Fully responsive webSite'],
         links: [
             {value: 'GitHub,', src: 'https://github.com/EY-dev/noelia-dickson'},
-
+            {value: 'WebSite', src: 'https://noedix.com/'}
             ]
     })
 }

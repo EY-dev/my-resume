@@ -25,6 +25,15 @@
                             <v-list-item-title>{{item.title}}</v-list-item-title>
                         </v-list-item-content>
                     </v-list-item>
+                    <v-list-item
+                        @click="downloadResume()">
+                        <v-list-item-icon>
+                            <v-icon>get_app</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-content>
+                            <v-list-item-title>PDF version</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
                 </div>
                 <v-divider style="margin-top: 15px"/>
                 <div id="pages-2" class="widget">
@@ -62,6 +71,10 @@
 
         }),
         methods:{
+            downloadResume(){
+                const link = "https://ey-dev.github.io/my-page/files/EugeneYesaulovResume.pdf"
+                window.open(link);
+            },
             closeNavigation(link){
                 const links = this.$store.getters.getAvailableLinks;
                 for(let index in links){

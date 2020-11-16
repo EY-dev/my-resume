@@ -17,7 +17,7 @@
         <v-col>
           <div class="note-row">
             <v-icon class="icon-row">location_on</v-icon>
-            <h5>5525 Wigeon St SE Salem, OR</h5>
+            <h5>739 Wild Rose Ln SE, Salem, OR</h5>
           </div>
           <div class="note-row">
             <v-icon class="icon-row">ring_volume</v-icon>
@@ -77,7 +77,7 @@
           </div>
           <div class="note-row">
             <v-icon class="icon-row">email</v-icon>
-            <a href="mailto:esaulov.eugene@yandex.ru"><h5>esaulov.eugene@yandex.ru</h5></a>
+            <a href="mailto:esaulov.eugene@yandex.ru"><h5>eyesaulov@ey-dev.com</h5></a>
           </div>
           <div class="note-row">
             <div class="icon-row">

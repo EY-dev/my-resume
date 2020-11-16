@@ -9,14 +9,14 @@
             <navigation-bar @open-full-navigation="openFullNavigationList = true"></navigation-bar>
           </v-col>
           <v-col v-if="showPhoto()" class="mainInfo" :style="{'height': heightWindow+'px'}">
-            <div class="photo-background" style=")">
-            </div>
+            <div class="photo-background"/>
             <div class="picture-title">
                 <h1>Eugene Yesaulov</h1>
                 <ul>
                     <li><a href="tel:(720) 292-7117"><v-icon class="icon-row">ring_volume</v-icon></a></li>
-                    <li><a href="mailto:eugene.yeasulov@gmail.com"><v-icon class="icon-row">email</v-icon></a></li>
-                    <li><a href="https://www.facebook.com/EugeneYesaulov"><svg
+                    <li><a href="mailto:eyesaulov@ey-dev.com"><v-icon class="icon-row">email</v-icon></a></li>
+                    <li><a href="https://www.facebook.com/EugeneYesaulov">
+                        <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 33.866667 33.866667"
                         height="30"

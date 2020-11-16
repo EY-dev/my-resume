@@ -6,9 +6,14 @@
             style="background-color: #1c1e1f; height: 100%"
             permanent>
         <v-list-item class="px-2">
-            <v-btn color="#e65100" large depressed dark height="50px" width="50px" class="hamburger" style="" @click.stop="openMenu()">
-                <v-icon>list</v-icon>
-            </v-btn>
+            <v-tooltip right style="z-index: 101" v-if="!$store.getters.isMobile">
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn color="#e65100" large depressed dark height="50px" width="50px" class="hamburger" v-on="on" v-bind="attrs" @click.stop="openMenu()">
+                        <v-icon>list</v-icon>
+                    </v-btn>
+                </template>
+                <span>Menu</span>
+            </v-tooltip>
         </v-list-item>
         <v-list dense v-if="isReady" class="navigation-links">
             <v-list-item
@@ -51,6 +56,16 @@
                 </v-list-item-icon>
             </v-list-item>
         </v-list>
+        <v-list-item class="pdf-btn">
+            <v-tooltip right style="z-index: 101" v-if="!$store.getters.isMobile">
+                <template v-slot:activator="{ on, attrs }">
+                    <v-btn color="#1c1e1f" large depressed dark height="50px" width="50px" v-on="on" v-bind="attrs" download href="https://ey-dev.github.io/my-page/files/EugeneYesaulovResume.pdf">
+                        <v-icon>get_app</v-icon>
+                    </v-btn>
+                </template>
+                <span>Download PDF</span>
+            </v-tooltip>
+        </v-list-item>
     </v-navigation-drawer>
 </template>
 
@@ -59,6 +74,7 @@
         name: "NavigationBar",
         data : ()=>({
             isReady:false,
+            resume: null
         }),
         created() {
 
@@ -96,6 +112,15 @@
 </script>
 
 <style scoped>
+    .pdf-btn{
+        position: absolute;
+        top: 100%;
+        transform: translate(0, -100%);
+        padding: 0;
+    }
+    .pdf-btn a{
+        min-width: 50px!important;
+    }
     .navigation-links{
         position: absolute;
         top: 50%;

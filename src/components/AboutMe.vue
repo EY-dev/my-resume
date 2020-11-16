@@ -11,12 +11,12 @@
             <v-col>
                 <div class="subtitle">
                     <div class="age">
-                        <p>{{(new Date().getFullYear()) - 1988}} years</p>
+                        <p>{{(new Date().getFullYear()) - 2011}} years of work experience</p>
                     </div>
                     <div class="location">
                         <p>USA</p>
                     </div>
-                    <div class="current-status"><p>Student</p></div>
+                    <div class="current-status"><p>Freelancer</p></div>
                 </div>
             </v-col>
         </v-row>
@@ -318,7 +318,7 @@
                 <div class="project">
                     <div>
                         <div id="elegant-project" class="project-icon" @click="openPage('/elegant-crm')">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46667 135.46667">
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46667 135.46667">
                                 <g id="layer1" transform="translate(133.50119,20.10833)" style="display:inline">
                                     <circle
                                             cy="47.625"
@@ -367,7 +367,7 @@
                 <div class="project">
                     <div>
                         <div id="pet-project" class="project-icon" @click="openPage('/demo-of-algorithms')">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.00001 384.00002">
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384.00001 384.00002">
                                 <circle
                                         r="191.25"
                                         style="fill-opacity:1;stroke-width:0.670513"
@@ -408,7 +408,7 @@
                 <div class="project">
                     <div>
                         <div id="resume" class="project-icon" @click="openPage('/resume')">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46667 135.46667">
+                            <svg class="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 135.46667 135.46667">
                                 <g style="display:inline">
                                     <ellipse
                                             fill="#cccccc"
@@ -486,6 +486,9 @@
 </script>
 
 <style scoped>
+    .button{
+        cursor: pointer;
+    }
     #resume:hover a{
         color: #e65100;
     }
@@ -524,7 +527,7 @@
         color: #e65100;
     }
     svg{
-        cursor: pointer;
+
     }
     svg:hover #vuetify :nth-child(1){
         fill:#1697f6;

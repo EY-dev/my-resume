@@ -5,13 +5,13 @@
             <h2 class="entry-subtitle">education</h2>
         </header>
         <div class="list-item">
-            <div class="date">2019-NOWADAYS</div>
+            <div class="date">2019-2020</div>
             <div class="name">CHEMEKETA COMMUNITY COLLEGE</div>
             <div class="location">
                 <div class="country">USA</div>
                 <div class="city"><p>Salem, OR</p></div>
             </div>
-            <div class="description">Computer programming certificate</div>
+            <div class="description">Associate degree<br>Certificate of computer programming</div>
         </div>
         <div class="list-item">
             <div class="date">2018-2019</div>
@@ -29,7 +29,7 @@
                 <div class="country">Russia</div>
                 <div class="city"><p>Krasnodar</p></div>
             </div>
-            <div class="description">Faculty of economy, 1 year</div>
+            <div class="description">Bachelors Degree in Economics<br>Faculty of economy<br>Unfinished</div>
         </div>
         <div class="list-item">
             <div class="date">2005-2009</div>
@@ -38,7 +38,7 @@
                 <div class="country">Russia</div>
                 <div class="city"><p>Rostov on Don</p></div>
             </div>
-            <div class="description">Faculty of mathematics, mechanic and Computer science, Bachelors Degree</div>
+            <div class="description">Bachelors Degree in Computer Science<br>Faculty of mathematics, mechanic and Computer science</div>
         </div>
         <div style="height:20px;"><p> </p></div>
     </div>

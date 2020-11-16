@@ -5,13 +5,13 @@
             <h2 class="entry-subtitle">experience</h2>
         </header>
         <div class="list-item">
-            <div class="date">2020-NOWADAYS</div>
+            <div class="date">2020-2020</div>
             <div class="name">Elegant Enterprises Inc</div>
             <div class="location">
                 <div class="country">USA</div>
                 <div class="city"><p>Salem, OR</p></div>
             </div>
-            <div class="description">Web developer. Part time. Developing and maintaining elegant-crm web site/progressive web application</div>
+            <div class="description">Web developer<br>Part time<br>Developing and maintaining elegant-crm web site/progressive web application</div>
         </div>
         <div class="list-item">
             <div class="date">2014-2018</div>
@@ -20,7 +20,7 @@
                 <div class="country">Russia</div>
                 <div class="city"><p>Krasnodar</p></div>
             </div>
-            <div class="description">Software engineer. Full time. Manual testing. Developing templates for MS Word and MS Excel for automatic reports (microsoft visual basic application, microsoft sql server). Supporting and developing web site (php, javascript, jquery, mysql, cms 1c-bitrix)</div>
+            <div class="description">Software engineer<br>Full time<br>Manual testing. Developing templates for MS Word and MS Excel for automatic reports (microsoft visual basic application, microsoft sql server). Supporting and developing web site (php, javascript, jquery, mysql, cms 1c-bitrix)</div>
         </div>
         <div class="list-item">
             <div class="date">2011-2014</div>
@@ -29,7 +29,7 @@
                 <div class="country">Russia</div>
                 <div class="city"><p>Krasnodar</p></div>
             </div>
-            <div class="description">Software engineer. Full Time. Supporting, maintaining and testing C# (WPF) application + Web version</div>
+            <div class="description">Software engineer<br>Full Time<br>Supporting, maintaining and testing C# (WPF) application + Web version</div>
         </div>
         <div class="list-item">
             <div class="date">2009-2011</div>
@@ -38,7 +38,7 @@
                 <div class="country">Russia</div>
                 <div class="city"><p>Krasnodar</p></div>
             </div>
-            <div class="description">Full Time. Instructor for Math, Physics, Computer Science classes.</div>
+            <div class="description">Instructor<br>Full Time<br>Classes: Math, Physics, Computer Science.</div>
         </div>
         <div style="height:20px;"><p> </p></div>
     </div>
