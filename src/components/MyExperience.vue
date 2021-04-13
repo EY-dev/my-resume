@@ -5,7 +5,7 @@
             <h2 class="entry-subtitle">experience</h2>
         </header>
         <div class="list-item">
-            <div class="date">2020-2020</div>
+            <div class="date">2019-2021</div>
             <div class="name">Elegant Enterprises Inc</div>
             <div class="location">
                 <div class="country">USA</div>
@@ -15,7 +15,7 @@
         </div>
         <div class="list-item">
             <div class="date">2014-2018</div>
-            <div class="name">Business Consalting</div>
+            <div class="name">Business Consulting</div>
             <div class="location">
                 <div class="country">Russia</div>
                 <div class="city"><p>Krasnodar</p></div>
@@ -33,7 +33,7 @@
         </div>
         <div class="list-item">
             <div class="date">2009-2011</div>
-            <div class="name">COLLEAGE OF KRASNODAR</div>
+            <div class="name">COLLEGE OF KRASNODAR</div>
             <div class="location">
                 <div class="country">Russia</div>
                 <div class="city"><p>Krasnodar</p></div>

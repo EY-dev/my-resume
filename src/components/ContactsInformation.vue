@@ -17,11 +17,11 @@
         <v-col>
           <div class="note-row">
             <v-icon class="icon-row">location_on</v-icon>
-            <h5>739 Wild Rose Ln SE, Salem, OR</h5>
+            <h5>Krasnodar, Russian Federation</h5>
           </div>
           <div class="note-row">
             <v-icon class="icon-row">ring_volume</v-icon>
-            <a href="tel:(720) 292-7117"><h5>(720) 292-7117</h5></a>
+            <a href="tel:(909) 451-8518"><h5>(909) 451-8518</h5></a>
           </div>
           <div class="note-row">
             <div class="icon-row" style="margin-top: -5px">
@@ -106,7 +106,7 @@
       </v-row>
       <v-row>
         <v-col align="center" justify="center">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90384.83821335243!2d-123.09824688782035!3d44.93297004564136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54bffefcbc4b9c63%3A0xf93429e08f0357c2!2sSalem%2C%20OR!5e0!3m2!1sen!2sus!4v1595982960472!5m2!1sen!2sus" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d90188.0664111416!2d38.92763438913866!3d45.05786135885388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40f04564714535b3%3A0xf720794f56c4beb6!2sKrasnodar%2C%20Krasnodar%20Krai!5e0!3m2!1sen!2sru!4v1617695786959!5m2!1sen!2sru" width="100%" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
         </v-col>
       </v-row>
       <div style="height:20px;"><p> </p></div>

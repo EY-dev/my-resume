@@ -14,9 +14,9 @@
                         <p>{{(new Date().getFullYear()) - 2011}} years of work experience</p>
                     </div>
                     <div class="location">
-                        <p>USA</p>
+                        <p>Russia</p>
                     </div>
-                    <div class="current-status"><p>Freelancer</p></div>
+                    <div class="current-status"><p>Unemployed</p></div>
                 </div>
             </v-col>
         </v-row>

@@ -45,7 +45,7 @@
     padding: 0;
     min-height: 300px;
   }
-  .ps{
+  6.ps{
     height: 100%;
     width: 100%;
   }
